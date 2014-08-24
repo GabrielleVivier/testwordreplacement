@@ -1,4 +1,9 @@
 <h1>Trick to launch user_file method!</h1>
 
+<%= form_for @contract do |f| %>
+  <%= f.file_field :file %> <br>
+  <%= f.submit %>
+<% end %>
+
 
 <%= link_to "Upload your profile (format docx)", user_profile_path(format: "docx") %>

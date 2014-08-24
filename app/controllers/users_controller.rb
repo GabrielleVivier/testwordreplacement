@@ -1,6 +1,7 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
 
   def index
+    @contract = Contract.new
     user_file
   end
 
@@ -22,7 +23,7 @@ class UserController < ApplicationController
         doc.replace("FIRST_NAME", @user.first_name)
 
         # Write the document back to a temporary file
-        tmp_file = Tempfile.new('word_tempate', "#{Rails.root}/tmp")
+        tmp_file = Tempfile.new('word_template', "#{Rails.root}/tmp")
         doc.commit(tmp_file.path)
 
         # Respond to the request by sending the temp file

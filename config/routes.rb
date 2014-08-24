@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
 
-  get '/users(.:format)' => "user#index", as: :user_profile
-  root "user#index"
+  get '/users(.:format)' => "users#index", as: :user_profile
+  root "users#index"
+
+  resources :contracts, only: [ :create ]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
